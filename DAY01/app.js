@@ -69,23 +69,91 @@
 //  player.sayHello("lynn");
 
 
-const calc ={
-    plus: function(a,b){
-        conse.log(a+b)
-    },
-    subtract: function(a,b){
-        console.log(a-b)
-    },
-    divide: function(a,b){
-        console.log(a/b)
-    },
-    square: function(a,b){
-        console.log(a*b)
-    }
+// const calc ={
+//     plus: function(a,b){
+//         conse.log(a+b)
+//     },
+//     subtract: function(a,b){
+//         console.log(a-b)
+//     },
+//     divide: function(a,b){
+//         console.log(a/b)
+//     },
+//     square: function(a,b){
+//         console.log(a*b)
+//     }
     
     
+// }
+// calc.plus(1,4);
+// calc.subtract(6,5);
+// calc.divide(2,6);
+// calc.square(1,9);
+
+// const age =parseInt(prompt("How old are you?"));
+
+// if(isNaN(age)==true||age<0){
+//     console.log("Please Write a real positive number");
+// }else if(age<18){
+//     console.log("you are too young");
+// }else if (age>=18 && age<=50){
+//     console.log("you can drink")
+// }else if (age>=50 && age<=80){
+//     console.log("you are too old. please don't drink")
+// }else if (age===100){
+//     console.log("100살 축하")    
+// }else{ 
+//     console.log("you cant drink ")
+// }
+//const title = document.querySelectorAll(".hello h1");
+// const title = document.getElementById("hello");
+
+// const title = document.querySelector("div h1");
+// title.innerText = "hello"
+// console.log(title);
+
+const title = document.querySelector("div.hello:first-child h1");
+
+console.dir(title);
+
+
+function handleTitleClick(){
+    title.style.color = "blue";
 }
-calc.plus(1,4);
-calc.subtract(6,5);
-calc.divide(2,6);
-calc.square(1,9);
+
+function hadleMouseEnter(){
+    title.innerText="mouse is here!";
+}
+
+function handleMouseLeave(){
+    title.innerText="mouse is gone!"
+}
+
+function handleWindowResize(){
+    document.body.style.backgroundColor="tomato";
+}
+
+function handleWindowCopy(){
+    alert("copier!");
+}
+
+function handleWindowOffline(){
+    alert("sos no wifi")
+
+}
+
+function handleWindowOnline(){
+    alert("ok online..")
+}
+
+//title.onclick = handleTitleClick;
+title.addEventListener("click", handleTitleClick);
+//title.onmouseenter = hadleMouseEnter;
+ title.addEventListener("mouseenter",hadleMouseEnter);
+//title.onmouseleave = handleMouseLeave;
+ title.addEventListener("mouseleave",handleMouseLeave);
+
+ window.addEventListener("resize",handleWindowResize);
+ window.addEventListener("copy",handleWindowCopy);
+ window.addEventListener("offline", handleWindowOffline);
+ window.addEventListener("online", handleWindowOnline);
